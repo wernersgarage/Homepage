@@ -162,6 +162,39 @@ a {
 }
 
 
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #66645d;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.language-switch a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.language-switch a:hover,
+.language-switch a.active {
+  color: var(--accent-light);
+}
+
+.language-switch a.active {
+  border-bottom: 1px solid var(--accent);
+}
+
+
 /* =========================
    BUTTONS
 ========================= */
@@ -676,6 +709,10 @@ a {
     grid-template-columns: 1fr auto;
   }
 
+  .nav-actions {
+    gap: 12px;
+  }
+
   .navigation {
     display: none;
   }
@@ -757,6 +794,15 @@ a {
 
   .header .button-small {
     display: none;
+  }
+
+  .nav-actions {
+    gap: 0;
+  }
+
+  .language-switch {
+    font-size: 0.72rem;
+    gap: 6px;
   }
 
   .hero {
