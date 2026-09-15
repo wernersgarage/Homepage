@@ -84,32 +84,11 @@ a {
   top: 0;
   z-index: 1000;
 
-  background: rgba(17, 17, 17, 0.94);
-  backdrop-filter: blur(14px);
+  background: rgba(9, 9, 9, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
   border-bottom: 1px solid var(--border);
-}
-
-
-/* =========================
-   HEADER BANNER
-========================= */
-
-.header-banner {
-  width: 100%;
-  background: var(--bg);
-  overflow: hidden;
-}
-
-.header-banner img {
-  width: 100%;
-  height: 110px;
-
-  object-fit: cover;
-  object-position: center;
-
-  display: block;
-  filter: grayscale(1) contrast(1.08) brightness(0.72);
 }
 
 
@@ -118,44 +97,77 @@ a {
 ========================= */
 
 .nav {
-  min-height: 88px;
+  min-height: 96px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
+  gap: 36px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.logo img {
-  height: 64px;
-  width: auto;
+.logo-main {
+  color: var(--accent-light);
+  font-family: "Arial Black", Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
 
-  display: block;
+.logo-sub {
+  margin-top: 8px;
+  color: var(--accent-dark);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-  object-fit: contain;
+.logo:hover .logo-main {
+  color: var(--text);
 }
 
 .navigation {
+  justify-self: center;
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 38px;
 }
 
 .navigation a {
+  position: relative;
   color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
 
-  font-size: 0.95rem;
-
-  transition: 0.2s;
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -9px;
+  height: 1px;
+  background: var(--accent);
+  transition: right 0.2s ease;
 }
 
 .navigation a:hover {
-  color: var(--accent);
+  color: var(--accent-light);
+}
+
+.navigation a:hover::after {
+  right: 0;
 }
 
 
@@ -627,6 +639,10 @@ a {
 
 @media (max-width: 900px) {
 
+  .nav {
+    grid-template-columns: 1fr auto;
+  }
+
   .navigation {
     display: none;
   }
@@ -690,16 +706,20 @@ a {
     width: min(90%, var(--container));
   }
 
-  .header-banner img {
-    height: 70px;
-  }
-
   .nav {
-    min-height: 68px;
+    min-height: 76px;
+    gap: 18px;
   }
 
-  .logo img {
-    height: 50px;
+  .logo-main {
+    font-size: 1.05rem;
+    letter-spacing: 1.1px;
+  }
+
+  .logo-sub {
+    margin-top: 6px;
+    font-size: 0.52rem;
+    letter-spacing: 1.25px;
   }
 
   .header .button-small {
