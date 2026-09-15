@@ -508,20 +508,42 @@ a {
    GALERIE
 ========================= */
 
+.garage-section {
+  overflow: hidden;
+}
+
 .gallery {
-  display: grid;
-
-  grid-template-columns: 1.3fr 1fr 1fr;
-
-  gap: 18px;
+  columns: 3 320px;
+  column-gap: 18px;
 }
 
 .gallery-item {
-  min-height: 420px;
+  position: relative;
+  margin: 0 0 18px;
+  break-inside: avoid;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
 }
 
-.gallery-item:first-child {
-  min-height: 520px;
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.55s ease, filter 0.35s ease;
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.025);
+  filter: contrast(1.02);
 }
 
 
@@ -671,11 +693,7 @@ a {
   }
 
   .gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .gallery-item:first-child {
-    grid-column: span 2;
+    columns: 2 280px;
   }
 
   .contact-grid {
@@ -767,14 +785,12 @@ a {
   }
 
   .gallery {
-    grid-template-columns: 1fr;
+    columns: 1;
+    column-gap: 0;
   }
 
-  .gallery-item,
-  .gallery-item:first-child {
-    grid-column: auto;
-
-    min-height: 320px;
+  .gallery-item {
+    margin-bottom: 14px;
   }
 
   .contact-card {
