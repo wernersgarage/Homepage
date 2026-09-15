@@ -842,3 +842,155 @@ a {
   }
 
 }
+/* =========================
+   FOOTER / RECHTLICHES
+========================= */
+.footer-content {
+  display: grid;
+  gap: 26px;
+}
+
+.footer-business {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 20px;
+  color: #8e8a80;
+  line-height: 1.55;
+}
+
+.footer-business strong {
+  width: 100%;
+  color: var(--accent-light);
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+.footer-business a,
+.footer-links a {
+  transition: color 0.2s ease;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.legal-main {
+  min-height: calc(100vh - 180px);
+  padding: 80px 0 110px;
+}
+
+.legal-shell {
+  max-width: 900px;
+}
+
+.legal-back {
+  display: inline-block;
+  margin-bottom: 38px;
+  color: var(--accent-light);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.legal-page-title {
+  font-size: clamp(2.7rem, 6vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -2px;
+  margin-bottom: 54px;
+}
+
+.legal-card {
+  background: rgba(20, 20, 18, 0.86);
+  border: 1px solid var(--border);
+  padding: clamp(28px, 5vw, 54px);
+}
+
+.legal-card h2 {
+  margin-top: 42px;
+  margin-bottom: 14px;
+  font-size: 1.35rem;
+  color: var(--accent-light);
+}
+
+.legal-card h2:first-child {
+  margin-top: 0;
+}
+
+.legal-card p,
+.legal-card li {
+  color: var(--muted);
+}
+
+.legal-card p + p {
+  margin-top: 14px;
+}
+
+.legal-card ul {
+  margin: 12px 0 0 20px;
+}
+
+.legal-card a {
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-meta {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 8px 22px;
+}
+
+.legal-meta dt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.legal-meta dd {
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .footer-business {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .legal-main {
+    padding: 55px 0 80px;
+  }
+
+  .legal-page-title {
+    margin-bottom: 36px;
+  }
+
+  .legal-meta {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .legal-meta dd {
+    margin-bottom: 12px;
+  }
+}
