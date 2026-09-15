@@ -478,37 +478,29 @@ a {
 
 
 /* =========================
-   ABOUT
+   TEAM
 ========================= */
 
-.about-grid {
-  display: grid;
-
-  grid-template-columns: 0.9fr 1.1fr;
-
-  gap: 90px;
-
-  align-items: center;
+.team-section {
+  overflow: hidden;
 }
 
-.about-image {
-  height: 620px;
-}
-
-.about-content {
-  max-width: 600px;
-}
-
-.about-content h2 {
+.team-header {
   margin-bottom: 42px;
 }
 
-.about-content p:not(.eyebrow) {
-  color: var(--muted);
+.team-banner {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0d0d0d;
+}
 
-  font-size: 1.1rem;
-
-  margin-bottom: 20px;
+.team-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 
@@ -678,16 +670,6 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-  }
-
-  .about-image {
-    height: 480px;
-  }
-
   .gallery {
     grid-template-columns: 1fr 1fr;
   }
@@ -780,8 +762,8 @@ a {
     margin-bottom: 35px;
   }
 
-  .about-image {
-    height: 380px;
+  .team-header {
+    margin-bottom: 28px;
   }
 
   .gallery {
