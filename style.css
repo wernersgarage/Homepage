@@ -34,6 +34,29 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  position: relative;
+}
+
+/* Dezentes, feststehendes Wasserzeichen im Hintergrund */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(64vw, 820px);
+  height: min(88vh, 1100px);
+  transform: translate(-50%, -50%);
+  background: url("images/watermark.png") center / contain no-repeat;
+  opacity: 0.065;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header,
+main,
+.footer {
+  position: relative;
+  z-index: 1;
 }
 
 img {
@@ -357,7 +380,7 @@ a {
 }
 
 .section-dark {
-  background: var(--bg-soft);
+  background: rgba(20, 20, 18, 0.94);
 }
 
 .section-header {
@@ -492,7 +515,7 @@ a {
 ========================= */
 
 .contact-section {
-  background: var(--bg-light);
+  background: rgba(216, 212, 200, 0.97);
 
   color: var(--text-dark);
 }
@@ -656,6 +679,12 @@ a {
 ========================= */
 
 @media (max-width: 600px) {
+
+  body::before {
+    width: 92vw;
+    height: 78vh;
+    opacity: 0.05;
+  }
 
   .container {
     width: min(90%, var(--container));
