@@ -41,7 +41,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: 50%;
+  top: 53%;
   left: 50%;
   width: min(64vw, 820px);
   height: min(88vh, 1100px);
@@ -371,26 +371,33 @@ a {
 .service-strip {
   background: var(--accent);
   color: var(--text-dark);
-
-  overflow: hidden;
-
   padding: 22px 0;
 }
 
 .strip-content {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-
+  width: min(94%, 1500px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  font-size: clamp(0.9rem, 1.55vw, 1.5rem);
   font-weight: 900;
-
   letter-spacing: 1.5px;
-
-  white-space: nowrap;
-
+  text-transform: uppercase;
   text-align: center;
 }
 
-.strip-content span {
-  margin: 0 24px;
+.strip-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.strip-item:not(:last-child)::after {
+  content: "•";
+  margin: 0 clamp(12px, 2.1vw, 24px);
 }
 
 
@@ -600,6 +607,17 @@ a {
   color: #4f4d46;
 }
 
+.contact-link {
+  color: var(--text-dark);
+  border-bottom: 1px solid rgba(17, 17, 15, 0.28);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
 .contact-card .button {
   margin-top: 12px;
 }
@@ -702,6 +720,21 @@ a {
     gap: 60px;
   }
 
+  .service-strip {
+    padding: 18px 0;
+  }
+
+  .strip-content {
+    width: min(94%, 760px);
+    font-size: 0.92rem;
+    letter-spacing: 1.2px;
+    row-gap: 7px;
+  }
+
+  .strip-item:not(:last-child)::after {
+    margin: 0 14px;
+  }
+
 }
 
 
@@ -756,6 +789,27 @@ a {
 
   .hero-logo img {
     width: min(82vw, 360px);
+  }
+
+  .service-strip {
+    padding: 16px 0;
+  }
+
+  .strip-content {
+    width: min(92%, 430px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 16px;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+  }
+
+  .strip-item {
+    justify-content: center;
+  }
+
+  .strip-item:not(:last-child)::after {
+    display: none;
   }
 
   .section {
