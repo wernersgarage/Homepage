@@ -444,7 +444,7 @@ a {
 }
 
 .service {
-  min-height: 280px;
+  min-height: 220px;
 
   padding: 38px;
 
@@ -460,16 +460,6 @@ a {
   background: #1a1916;
 }
 
-.service-number {
-  display: block;
-
-  color: var(--accent);
-
-  font-size: 0.75rem;
-  font-weight: 800;
-
-  margin-bottom: 52px;
-}
 
 .service h3 {
   font-size: 1.5rem;
@@ -828,10 +818,6 @@ a {
     min-height: auto;
 
     padding: 30px;
-  }
-
-  .service-number {
-    margin-bottom: 35px;
   }
 
   .team-header {
