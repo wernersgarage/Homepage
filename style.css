@@ -582,13 +582,13 @@ a {
 ========================= */
 
 .contact-section {
-  background: rgba(216, 212, 200, 0.97);
-
-  color: var(--text-dark);
+  background: var(--bg);
+  color: var(--text);
+  border-top: 1px solid var(--border);
 }
 
 .contact-section .eyebrow {
-  color: var(--accent-dark);
+  color: var(--accent);
 }
 
 .contact-grid {
@@ -606,39 +606,44 @@ a {
 
   margin-top: 30px;
 
-  color: #4f4d46;
+  color: var(--muted);
 }
 
 .contact-card {
-  background: #e7e3d9;
-
+  background: var(--bg-soft);
   padding: 45px;
-
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
 }
 
 .contact-card h3 {
-  font-size: 1.8rem;
-
-  margin-bottom: 28px;
+  font-family: "Rockwell Extra Bold", Rockwell, Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.45rem);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 30px;
 }
 
 .contact-card p {
   margin-bottom: 22px;
+  color: var(--muted);
+}
 
-  color: #4f4d46;
+.contact-card strong {
+  color: var(--text);
 }
 
 .contact-link {
-  color: var(--text-dark);
-  border-bottom: 1px solid rgba(17, 17, 15, 0.28);
+  color: var(--accent-light);
+  border-bottom: 1px solid rgba(199, 194, 178, 0.35);
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .contact-link:hover {
-  color: var(--accent-dark);
-  border-color: var(--accent-dark);
+  color: var(--text);
+  border-color: var(--text);
 }
 
 .contact-card .button {
@@ -653,16 +658,18 @@ a {
   margin-top: 12px;
 }
 
-.button-outline {
-  background: transparent;
+.contact-section .button,
+.contact-section .button-outline {
+  background: var(--accent-light);
   color: var(--text-dark);
-  border-color: var(--text-dark);
+  border-color: var(--accent-light);
 }
 
-.button-outline:hover {
-  background: var(--text-dark);
+.contact-section .button:hover,
+.contact-section .button-outline:hover {
+  background: transparent;
   color: var(--accent-light);
-  border-color: var(--text-dark);
+  border-color: var(--accent-light);
 }
 
 
